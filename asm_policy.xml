@@ -292,33 +292,33 @@
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="Data Guard: Information leakage detected" id="RESPONSE_SCRUBBING">
-      <alarm>true</alarm>
-      <block>true</block>
-      <learn>true</learn>
+      <alarm>false</alarm>
+      <block>false</block>
+      <learn>false</learn>
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="Request length exceeds defined buffer size" id="REQUEST_TOO_LONG">
-      <alarm>true</alarm>
-      <block>true</block>
-      <learn>true</learn>
+      <alarm>false</alarm>
+      <block>false</block>
+      <learn>false</learn>
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="Evasion technique detected" id="EVASION_DETECTED">
-      <alarm>true</alarm>
-      <block>true</block>
-      <learn>true</learn>
+      <alarm>false</alarm>
+      <block>false</block>
+      <learn>false</learn>
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="HTTP protocol compliance failed" id="HTTP_SANITY_CHECK_FAILED">
-      <alarm>true</alarm>
-      <block>true</block>
-      <learn>true</learn>
+      <alarm>false</alarm>
+      <block>false</block>
+      <learn>false</learn>
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="Access from disallowed Geolocation" id="ILLEGAL_GEOLOCATION">
-      <alarm>true</alarm>
-      <block>true</block>
-      <learn>true</learn>
+      <alarm>false</alarm>
+      <block>false</block>
+      <learn>false</learn>
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="Illegal repeated parameter name" id="REPEATED_PARAMETER_NAME">
@@ -394,9 +394,9 @@
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="Access from disallowed User/Session/IP/Device ID" id="SESSION_AWARENESS">
-      <alarm>true</alarm>
-      <block>true</block>
-      <learn>true</learn>
+      <alarm>false</alarm>
+      <block>false</block>
+      <learn>false</learn>
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="Illegal entry point" id="ENTRY_POINT">
@@ -406,15 +406,15 @@
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="Modified ASM cookie" id="MOD_ASM_COOKIE">
-      <alarm>true</alarm>
-      <block>true</block>
-      <learn>true</learn>
+      <alarm>false</alarm>
+      <block>false</block>
+      <learn>false</learn>
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="Illegal HTTP status in response" id="HTTP_STATUS_IN_RESPONSE">
-      <alarm>true</alarm>
-      <block>true</block>
-      <learn>true</learn>
+      <alarm>false</alarm>
+      <block>false</block>
+      <learn>false</learn>
       <policy_builder_tracking>enabled</policy_builder_tracking>
     </violation>
     <violation name="Access from malicious IP address" id="PARSER_ACCESS_FROM_MALICIOUS_IP_ADDRESS">
