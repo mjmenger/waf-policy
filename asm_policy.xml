@@ -8,7 +8,7 @@
     <last_change>Parameter * [update]: Overridden Name Meta-characters were set to 0x3a - allowed. { audit: policy = /JuiceShop/Application_1/ASM_Policy, username = admin, client IP = 50.39.112.226 }</last_change>
   </policy_version>
   <encoding>utf-8</encoding>
-  <description></description>
+  <description>version 0.1.1</description>
   <case_insensitive>true</case_insensitive>
   <owa>false</owa>
   <protocol_free>true</protocol_free>
