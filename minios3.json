@@ -15486,30 +15486,7 @@
             "wildcardOrder" : 1
          }
       ],
-      "whitelist-ips" : [
-         {
-            "blockRequests" : "policy-default",
-            "description" : "",
-            "ignoreAnomalies" : false,
-            "ignoreIpReputation" : false,
-            "ipAddress" : "0.0.0.0",
-            "ipMask" : "0.0.0.0",
-            "neverLearnRequests" : false,
-            "neverLogRequests" : false,
-            "trustedByPolicyBuilder" : true
-         },
-         {
-            "blockRequests" : "never",
-            "description" : "",
-            "ignoreAnomalies" : false,
-            "ignoreIpReputation" : false,
-            "ipAddress" : "192.168.86.248",
-            "ipMask" : "255.255.255.255",
-            "neverLearnRequests" : false,
-            "neverLogRequests" : false,
-            "trustedByPolicyBuilder" : true
-         }
-      ],
+      "whitelist-ips" : [],
       "xml-profiles" : [
          {
             "attachmentsInSoapMessages" : false,
