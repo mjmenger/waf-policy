@@ -199,11 +199,46 @@
             },
             {
                "description" : "POST request with Content-Length: 0",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : true
             }
          ],
          "violations" : [
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Request length exceeds defined buffer size",
+               "learn" : false,
+               "name" : "VIOL_REQUEST_MAX_LENGTH"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal parameter value length",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_VALUE_LENGTH"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal URL",
+               "learn" : true,
+               "name" : "VIOL_URL"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal session ID in URL",
+               "learn" : true,
+               "name" : "VIOL_DYNAMIC_SESSION"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Login URL bypassed",
+               "learn" : true,
+               "name" : "VIOL_LOGIN_URL_BYPASSED"
+            },
             {
                "alarm" : true,
                "block" : true,
@@ -213,15 +248,70 @@
             {
                "alarm" : true,
                "block" : true,
-               "description" : "GraphQL introspection query",
-               "name" : "VIOL_GRAPHQL_INTROSPECTION_QUERY"
+               "description" : "Illegal file type",
+               "learn" : true,
+               "name" : "VIOL_FILETYPE"
             },
             {
                "alarm" : true,
                "block" : true,
-               "description" : "GraphQL data does not comply with format settings",
+               "description" : "Web Services Security failure",
                "learn" : true,
-               "name" : "VIOL_GRAPHQL_FORMAT"
+               "name" : "VIOL_XML_WEB_SERVICES_SECURITY"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "ASM Cookie Hijacking",
+               "learn" : true,
+               "name" : "VIOL_ASM_COOKIE_HIJACKING"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Cookie not RFC-compliant",
+               "learn" : true,
+               "name" : "VIOL_COOKIE_MALFORMED"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "XML data does not comply with format settings",
+               "learn" : true,
+               "name" : "VIOL_XML_FORMAT"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Disallowed file upload content detected in body",
+               "name" : "VIOL_FILE_UPLOAD_IN_BODY"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Login URL expired",
+               "learn" : true,
+               "name" : "VIOL_LOGIN_URL_EXPIRED"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal flow to URL",
+               "learn" : true,
+               "name" : "VIOL_FLOW"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Leaked Credentials Detection",
+               "name" : "VIOL_LEAKED_CREDENTIALS"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Virus detected",
+               "learn" : true,
+               "name" : "VIOL_VIRUS"
             },
             {
                "alarm" : true,
@@ -233,57 +323,97 @@
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Disallowed file upload content detected in body",
-               "name" : "VIOL_FILE_UPLOAD_IN_BODY"
+               "description" : "Failed to convert character",
+               "name" : "VIOL_ENCODING"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal meta character in value",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_VALUE_METACHAR"
             },
             {
                "alarm" : false,
                "block" : false,
-               "description" : "Violation Rating Need Examination detected",
-               "name" : "VIOL_RATING_NEED_EXAMINATION"
-            },
-            {
-               "alarm" : false,
-               "block" : false,
-               "description" : "Violation Rating Threat detected",
-               "name" : "VIOL_RATING_THREAT"
-            },
-            {
-               "alarm" : false,
-               "block" : false,
-               "description" : "Illegal repeated header",
+               "description" : "Expired timestamp",
                "learn" : false,
-               "name" : "VIOL_HEADER_REPEATED"
-            },
-            {
-               "alarm" : false,
-               "block" : false,
-               "description" : "Mandatory request body is missing",
-               "name" : "VIOL_MANDATORY_REQUEST_BODY"
+               "name" : "VIOL_COOKIE_EXPIRED"
             },
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Bad Actor Convicted",
-               "name" : "VIOL_CONVICTION"
-            },
-            {
-               "alarm" : false,
-               "block" : false,
-               "description" : "Illegal host name",
-               "name" : "VIOL_HOSTNAME"
+               "description" : "SOAP method not allowed",
+               "learn" : true,
+               "name" : "VIOL_XML_SOAP_METHOD"
             },
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Leaked Credentials Detection",
-               "name" : "VIOL_LEAKED_CREDENTIALS"
+               "description" : "Illegal parameter data type",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_DATA_TYPE"
             },
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Mitigation action determined by Threat Analysis Platform",
-               "name" : "VIOL_THREAT_ANALYSIS"
+               "description" : "JSON data does not comply with JSON schema",
+               "name" : "VIOL_JSON_SCHEMA"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Modified ASM cookie",
+               "learn" : true,
+               "name" : "VIOL_ASM_COOKIE_MODIFIED"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal meta character in parameter name",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_NAME_METACHAR"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal entry point",
+               "learn" : true,
+               "name" : "VIOL_FLOW_ENTRY_POINT"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Access from malicious IP address",
+               "name" : "VIOL_MALICIOUS_IP"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal cross-origin request",
+               "learn" : true,
+               "name" : "VIOL_CROSS_ORIGIN_REQUEST"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "HTTP protocol compliance failed",
+               "learn" : true,
+               "name" : "VIOL_HTTP_PROTOCOL"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal number of mandatory parameters",
+               "learn" : true,
+               "name" : "VIOL_FLOW_MANDATORY_PARAMS"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Plain text data does not comply with format settings",
+               "learn" : true,
+               "name" : "VIOL_PLAINTEXT_FORMAT"
             },
             {
                "alarm" : true,
@@ -294,38 +424,22 @@
             {
                "alarm" : true,
                "block" : true,
+               "description" : "Illegal header length",
+               "learn" : true,
+               "name" : "VIOL_HEADER_LENGTH"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal meta character in URL",
+               "learn" : true,
+               "name" : "VIOL_URL_METACHAR"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
                "description" : "Bad Actor Detected",
                "name" : "VIOL_MALICIOUS_DEVICE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal parameter location",
-               "name" : "VIOL_PARAMETER_LOCATION"
-            },
-            {
-               "alarm" : false,
-               "block" : false,
-               "description" : "Mandatory parameter is missing",
-               "name" : "VIOL_MANDATORY_PARAMETER"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "JSON data does not comply with JSON schema",
-               "name" : "VIOL_JSON_SCHEMA"
-            },
-            {
-               "alarm" : false,
-               "block" : false,
-               "description" : "Illegal parameter array value",
-               "name" : "VIOL_PARAMETER_ARRAY_VALUE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Threat Campaign detected",
-               "name" : "VIOL_THREAT_CAMPAIGN"
             },
             {
                "description" : "Attack signature detected",
@@ -334,9 +448,218 @@
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Server-side access to disallowed host",
+               "description" : "Illegal POST data length",
                "learn" : true,
-               "name" : "VIOL_SERVER_SIDE_HOST"
+               "name" : "VIOL_POST_DATA_LENGTH"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Bad Actor Convicted",
+               "name" : "VIOL_CONVICTION"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal attachment in SOAP message",
+               "learn" : true,
+               "name" : "VIOL_XML_SOAP_ATTACHMENT"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal request length",
+               "learn" : true,
+               "name" : "VIOL_REQUEST_LENGTH"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Data Guard: Information leakage detected",
+               "learn" : true,
+               "name" : "VIOL_DATA_GUARD"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Null character found in WebSocket text message",
+               "name" : "VIOL_WEBSOCKET_TEXT_NULL_VALUE"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Text content found in binary only WebSocket",
+               "learn" : true,
+               "name" : "VIOL_WEBSOCKET_TEXT_MESSAGE_NOT_ALLOWED"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal WebSocket frame length",
+               "learn" : true,
+               "name" : "VIOL_WEBSOCKET_FRAME_LENGTH"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal HTTP status in response",
+               "learn" : true,
+               "name" : "VIOL_HTTP_RESPONSE_STATUS"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Mandatory HTTP header is missing",
+               "learn" : true,
+               "name" : "VIOL_MANDATORY_HEADER"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal URL length",
+               "learn" : true,
+               "name" : "VIOL_URL_LENGTH"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "IP is blacklisted",
+               "name" : "VIOL_BLACKLISTED_IP"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Illegal host name",
+               "name" : "VIOL_HOSTNAME"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal static parameter value",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_STATIC_VALUE"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Mask not found in client frame",
+               "learn" : true,
+               "name" : "VIOL_WEBSOCKET_FRAME_MASKING"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal number of frames per message",
+               "learn" : true,
+               "name" : "VIOL_WEBSOCKET_FRAMES_PER_MESSAGE_COUNT"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal meta character in header",
+               "learn" : true,
+               "name" : "VIOL_HEADER_METACHAR"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal Base64 value",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_VALUE_BASE64"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Modified domain cookie(s)",
+               "learn" : true,
+               "name" : "VIOL_COOKIE_MODIFIED"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal parameter location",
+               "name" : "VIOL_PARAMETER_LOCATION"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Access from disallowed Geolocation",
+               "learn" : true,
+               "name" : "VIOL_GEOLOCATION"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "CSRF attack detected",
+               "name" : "VIOL_CSRF"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal parameter numeric value",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_NUMERIC_VALUE"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Disallowed file upload content detected",
+               "learn" : true,
+               "name" : "VIOL_FILE_UPLOAD"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "GraphQL data does not comply with format settings",
+               "learn" : true,
+               "name" : "VIOL_GRAPHQL_FORMAT"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Bad WebSocket handshake request",
+               "learn" : true,
+               "name" : "VIOL_WEBSOCKET_BAD_REQUEST"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Parameter value does not comply with regular expression",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_VALUE_REGEXP"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Malformed JSON data",
+               "learn" : true,
+               "name" : "VIOL_JSON_MALFORMED"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Null in multi-part parameter value",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_MULTIPART_NULL_VALUE"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Failure in WebSocket framing protocol",
+               "learn" : true,
+               "name" : "VIOL_WEBSOCKET_FRAMING_PROTOCOL"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Access token does not comply with the profile requirements",
+               "name" : "VIOL_ACCESS_INVALID"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Threat Campaign detected",
+               "name" : "VIOL_THREAT_CAMPAIGN"
             },
             {
                "alarm" : false,
@@ -351,197 +674,10 @@
                "name" : "VIOL_HOSTNAME_MISMATCH"
             },
             {
-               "alarm" : true,
-               "block" : true,
-               "description" : "IP is blacklisted",
-               "name" : "VIOL_BLACKLISTED_IP"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Plain text data does not comply with format settings",
-               "learn" : true,
-               "name" : "VIOL_PLAINTEXT_FORMAT"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal WebSocket binary message length",
-               "learn" : true,
-               "name" : "VIOL_WEBSOCKET_BINARY_MESSAGE_LENGTH"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal number of frames per message",
-               "learn" : true,
-               "name" : "VIOL_WEBSOCKET_FRAMES_PER_MESSAGE_COUNT"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal WebSocket extension",
-               "learn" : true,
-               "name" : "VIOL_WEBSOCKET_EXTENSION"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Binary content found in text only WebSocket",
-               "learn" : true,
-               "name" : "VIOL_WEBSOCKET_BINARY_MESSAGE_NOT_ALLOWED"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Text content found in binary only WebSocket",
-               "learn" : true,
-               "name" : "VIOL_WEBSOCKET_TEXT_MESSAGE_NOT_ALLOWED"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal cross-origin request",
-               "learn" : true,
-               "name" : "VIOL_CROSS_ORIGIN_REQUEST"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Null character found in WebSocket text message",
-               "name" : "VIOL_WEBSOCKET_TEXT_NULL_VALUE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal WebSocket frame length",
-               "learn" : true,
-               "name" : "VIOL_WEBSOCKET_FRAME_LENGTH"
-            },
-            {
                "alarm" : false,
                "block" : false,
-               "description" : "Mask not found in client frame",
-               "learn" : true,
-               "name" : "VIOL_WEBSOCKET_FRAME_MASKING"
-            },
-            {
-               "alarm" : false,
-               "block" : false,
-               "description" : "Failure in WebSocket framing protocol",
-               "learn" : true,
-               "name" : "VIOL_WEBSOCKET_FRAMING_PROTOCOL"
-            },
-            {
-               "alarm" : false,
-               "block" : false,
-               "description" : "Bad WebSocket handshake request",
-               "learn" : true,
-               "name" : "VIOL_WEBSOCKET_BAD_REQUEST"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal redirection attempt",
-               "learn" : true,
-               "name" : "VIOL_REDIRECT"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Mandatory HTTP header is missing",
-               "learn" : true,
-               "name" : "VIOL_MANDATORY_HEADER"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "GWT data does not comply with format settings",
-               "learn" : true,
-               "name" : "VIOL_GWT_FORMAT"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal Base64 value",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_VALUE_BASE64"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Access from malicious IP address",
-               "name" : "VIOL_MALICIOUS_IP"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Disallowed file upload content detected",
-               "learn" : true,
-               "name" : "VIOL_FILE_UPLOAD"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Malformed GWT data",
-               "learn" : true,
-               "name" : "VIOL_GWT_MALFORMED"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal meta character in header",
-               "learn" : true,
-               "name" : "VIOL_HEADER_METACHAR"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal request content type",
-               "learn" : true,
-               "name" : "VIOL_URL_CONTENT_TYPE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal HTTP status in response",
-               "learn" : true,
-               "name" : "VIOL_HTTP_RESPONSE_STATUS"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Modified ASM cookie",
-               "learn" : true,
-               "name" : "VIOL_ASM_COOKIE_MODIFIED"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Modified domain cookie(s)",
-               "learn" : true,
-               "name" : "VIOL_COOKIE_MODIFIED"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Cookie not RFC-compliant",
-               "learn" : true,
-               "name" : "VIOL_COOKIE_MALFORMED"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Malformed JSON data",
-               "learn" : true,
-               "name" : "VIOL_JSON_MALFORMED"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal entry point",
-               "learn" : true,
-               "name" : "VIOL_FLOW_ENTRY_POINT"
+               "description" : "Missing Access Token",
+               "name" : "VIOL_ACCESS_MISSING"
             },
             {
                "alarm" : true,
@@ -550,253 +686,16 @@
                "name" : "VIOL_SESSION_AWARENESS"
             },
             {
-               "alarm" : true,
-               "block" : true,
-               "description" : "ASM Cookie Hijacking",
-               "learn" : true,
-               "name" : "VIOL_ASM_COOKIE_HIJACKING"
+               "alarm" : false,
+               "block" : false,
+               "description" : "Illegal parameter array value",
+               "name" : "VIOL_PARAMETER_ARRAY_VALUE"
             },
             {
                "alarm" : false,
                "block" : false,
-               "description" : "Expired timestamp",
-               "learn" : false,
-               "name" : "VIOL_COOKIE_EXPIRED"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal static parameter value",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_STATIC_VALUE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal dynamic parameter value",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_DYNAMIC_VALUE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal parameter value length",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_VALUE_LENGTH"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal parameter data type",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_DATA_TYPE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal parameter numeric value",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_NUMERIC_VALUE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal number of mandatory parameters",
-               "learn" : true,
-               "name" : "VIOL_FLOW_MANDATORY_PARAMS"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Parameter value does not comply with regular expression",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_VALUE_REGEXP"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal file type",
-               "learn" : true,
-               "name" : "VIOL_FILETYPE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal URL",
-               "learn" : true,
-               "name" : "VIOL_URL"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal flow to URL",
-               "learn" : true,
-               "name" : "VIOL_FLOW"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal method",
-               "learn" : true,
-               "name" : "VIOL_METHOD"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal session ID in URL",
-               "learn" : true,
-               "name" : "VIOL_DYNAMIC_SESSION"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal query string or POST data",
-               "learn" : true,
-               "name" : "VIOL_FLOW_DISALLOWED_INPUT"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal parameter",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal empty parameter value",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_EMPTY_VALUE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal POST data length",
-               "learn" : true,
-               "name" : "VIOL_POST_DATA_LENGTH"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Null in multi-part parameter value",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_MULTIPART_NULL_VALUE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal header length",
-               "learn" : true,
-               "name" : "VIOL_HEADER_LENGTH"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "JSON data does not comply with format settings",
-               "learn" : true,
-               "name" : "VIOL_JSON_FORMAT"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal repeated parameter name",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_REPEATED"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal meta character in URL",
-               "learn" : true,
-               "name" : "VIOL_URL_METACHAR"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal meta character in parameter name",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_NAME_METACHAR"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal meta character in value",
-               "learn" : true,
-               "name" : "VIOL_PARAMETER_VALUE_METACHAR"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "SOAP method not allowed",
-               "learn" : true,
-               "name" : "VIOL_XML_SOAP_METHOD"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Brute Force: Maximum login attempts are exceeded",
-               "name" : "VIOL_BRUTE_FORCE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "CSRF authentication expired",
-               "learn" : true,
-               "name" : "VIOL_CSRF_EXPIRED"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal URL length",
-               "learn" : true,
-               "name" : "VIOL_URL_LENGTH"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal cookie length",
-               "learn" : true,
-               "name" : "VIOL_COOKIE_LENGTH"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal request length",
-               "learn" : true,
-               "name" : "VIOL_REQUEST_LENGTH"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal query string length",
-               "learn" : true,
-               "name" : "VIOL_QUERY_STRING_LENGTH"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Access from disallowed Geolocation",
-               "learn" : true,
-               "name" : "VIOL_GEOLOCATION"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "HTTP protocol compliance failed",
-               "learn" : true,
-               "name" : "VIOL_HTTP_PROTOCOL"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Failed to convert character",
-               "name" : "VIOL_ENCODING"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "CSRF attack detected",
-               "name" : "VIOL_CSRF"
+               "description" : "Violation Rating Threat detected",
+               "name" : "VIOL_RATING_THREAT"
             },
             {
                "alarm" : true,
@@ -808,23 +707,149 @@
             {
                "alarm" : true,
                "block" : true,
+               "description" : "Illegal method",
+               "learn" : true,
+               "name" : "VIOL_METHOD"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal empty parameter value",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_EMPTY_VALUE"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
                "description" : "XML data does not comply with schema or WSDL document",
                "learn" : true,
                "name" : "VIOL_XML_SCHEMA"
             },
             {
-               "alarm" : true,
-               "block" : true,
-               "description" : "XML data does not comply with format settings",
-               "learn" : true,
-               "name" : "VIOL_XML_FORMAT"
+               "alarm" : false,
+               "block" : false,
+               "description" : "Mandatory request body is missing",
+               "name" : "VIOL_MANDATORY_REQUEST_BODY"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Illegal login attempt",
+               "name" : "VIOL_LOGIN"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Violation Rating Need Examination detected",
+               "name" : "VIOL_RATING_NEED_EXAMINATION"
             },
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Web Services Security failure",
+               "description" : "CSRF authentication expired",
                "learn" : true,
-               "name" : "VIOL_XML_WEB_SERVICES_SECURITY"
+               "name" : "VIOL_CSRF_EXPIRED"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Malformed Access Token",
+               "name" : "VIOL_ACCESS_MALFORMED"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "GWT data does not comply with format settings",
+               "learn" : true,
+               "name" : "VIOL_GWT_FORMAT"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Malformed GWT data",
+               "learn" : true,
+               "name" : "VIOL_GWT_MALFORMED"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Server-side access to disallowed host",
+               "learn" : true,
+               "name" : "VIOL_SERVER_SIDE_HOST"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "JSON data does not comply with format settings",
+               "learn" : true,
+               "name" : "VIOL_JSON_FORMAT"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal WebSocket binary message length",
+               "learn" : true,
+               "name" : "VIOL_WEBSOCKET_BINARY_MESSAGE_LENGTH"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Mitigation action determined by Threat Analysis Platform",
+               "name" : "VIOL_THREAT_ANALYSIS"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal request content type",
+               "learn" : true,
+               "name" : "VIOL_URL_CONTENT_TYPE"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal dynamic parameter value",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_DYNAMIC_VALUE"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal query string length",
+               "learn" : true,
+               "name" : "VIOL_QUERY_STRING_LENGTH"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal WebSocket extension",
+               "learn" : true,
+               "name" : "VIOL_WEBSOCKET_EXTENSION"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal cookie length",
+               "learn" : true,
+               "name" : "VIOL_COOKIE_LENGTH"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "GraphQL introspection query",
+               "name" : "VIOL_GRAPHQL_INTROSPECTION_QUERY"
+            },
+            {
+               "alarm" : true,
+               "block" : true,
+               "description" : "Illegal repeated parameter name",
+               "learn" : true,
+               "name" : "VIOL_PARAMETER_REPEATED"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Mandatory parameter is missing",
+               "name" : "VIOL_MANDATORY_PARAMETER"
             },
             {
                "alarm" : true,
@@ -836,44 +861,43 @@
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Virus detected",
+               "description" : "Binary content found in text only WebSocket",
                "learn" : true,
-               "name" : "VIOL_VIRUS"
+               "name" : "VIOL_WEBSOCKET_BINARY_MESSAGE_NOT_ALLOWED"
             },
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Request length exceeds defined buffer size",
-               "learn" : true,
-               "name" : "VIOL_REQUEST_MAX_LENGTH"
+               "description" : "Brute Force: Maximum login attempts are exceeded",
+               "name" : "VIOL_BRUTE_FORCE"
             },
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Login URL bypassed",
+               "description" : "Illegal redirection attempt",
                "learn" : true,
-               "name" : "VIOL_LOGIN_URL_BYPASSED"
+               "name" : "VIOL_REDIRECT"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Illegal repeated header",
+               "learn" : false,
+               "name" : "VIOL_HEADER_REPEATED"
             },
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Login URL expired",
+               "description" : "Illegal parameter",
                "learn" : true,
-               "name" : "VIOL_LOGIN_URL_EXPIRED"
+               "name" : "VIOL_PARAMETER"
             },
             {
                "alarm" : true,
                "block" : true,
-               "description" : "Data Guard: Information leakage detected",
+               "description" : "Illegal query string or POST data",
                "learn" : true,
-               "name" : "VIOL_DATA_GUARD"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Illegal attachment in SOAP message",
-               "learn" : true,
-               "name" : "VIOL_XML_SOAP_ATTACHMENT"
+               "name" : "VIOL_FLOW_DISALLOWED_INPUT"
             }
          ],
          "web-services-securities" : [
@@ -1516,9 +1540,9 @@
          {
             "accessibleOnlyThroughTheHttpProtocol" : false,
             "attackSignaturesCheck" : true,
+            "decodeValueAsBase64" : "disabled",
             "enforcementType" : "allow",
             "insertSameSiteAttribute" : "none",
-            "isBase64" : false,
             "maskValueInLogs" : false,
             "name" : "*",
             "performStaging" : true,
@@ -1557,224 +1581,18 @@
       "enforcementMode" : "blocking",
       "filetypes" : [
          {
-            "allowed" : false,
-            "name" : "cfg"
-         },
-         {
-            "allowed" : false,
-            "name" : "cer"
-         },
-         {
-            "allowed" : false,
-            "name" : "bkp"
-         },
-         {
-            "allowed" : false,
-            "name" : "bin"
-         },
-         {
-            "allowed" : false,
-            "name" : "bck"
-         },
-         {
-            "allowed" : false,
-            "name" : "bat"
-         },
-         {
-            "allowed" : false,
-            "name" : "bak"
-         },
-         {
-            "allowed" : false,
-            "name" : "aspx"
-         },
-         {
-            "allowed" : false,
-            "name" : "ashx"
-         },
-         {
-            "allowed" : false,
-            "name" : "wmz"
-         },
-         {
-            "allowed" : false,
-            "name" : "tmp"
-         },
-         {
-            "allowed" : false,
-            "name" : "temp"
-         },
-         {
-            "allowed" : false,
-            "name" : "sys"
-         },
-         {
-            "allowed" : false,
-            "name" : "stm"
-         },
-         {
-            "allowed" : false,
-            "name" : "shtml"
-         },
-         {
-            "allowed" : false,
-            "name" : "shtm"
-         },
-         {
-            "allowed" : false,
-            "name" : "save"
-         },
-         {
-            "allowed" : false,
-            "name" : "sav"
-         },
-         {
-            "allowed" : false,
-            "name" : "reg"
-         },
-         {
-            "allowed" : false,
-            "name" : "py"
-         },
-         {
-            "allowed" : false,
-            "name" : "printer"
-         },
-         {
-            "allowed" : false,
-            "name" : "pol"
-         },
-         {
-            "allowed" : false,
-            "name" : "php"
-         },
-         {
-            "allowed" : false,
-            "name" : "pfx"
-         },
-         {
-            "allowed" : false,
-            "name" : "pem"
-         },
-         {
-            "allowed" : false,
-            "name" : "p7c"
-         },
-         {
-            "allowed" : false,
-            "name" : "p7b"
-         },
-         {
-            "allowed" : false,
-            "name" : "p12"
-         },
-         {
-            "allowed" : false,
-            "name" : "old"
-         },
-         {
-            "allowed" : false,
-            "name" : "nws"
-         },
-         {
-            "allowed" : false,
-            "name" : "msi"
-         },
-         {
-            "allowed" : false,
-            "name" : "lua"
-         },
-         {
-            "allowed" : false,
-            "name" : "log"
-         },
-         {
-            "allowed" : false,
-            "name" : "key"
-         },
-         {
-            "allowed" : false,
-            "name" : "jsp"
-         },
-         {
-            "allowed" : false,
-            "name" : "java"
-         },
-         {
-            "allowed" : false,
-            "name" : "ini"
-         },
-         {
-            "allowed" : false,
-            "name" : "idq"
-         },
-         {
-            "allowed" : false,
-            "name" : "idc"
-         },
-         {
-            "allowed" : false,
-            "name" : "ida"
-         },
-         {
-            "allowed" : false,
-            "name" : "htw"
-         },
-         {
-            "allowed" : false,
-            "name" : "htr"
-         },
-         {
-            "allowed" : false,
-            "name" : "hta"
-         },
-         {
-            "allowed" : false,
-            "name" : "exe"
-         },
-         {
-            "allowed" : false,
-            "name" : "eml"
-         },
-         {
-            "allowed" : false,
-            "name" : "do"
-         },
-         {
-            "allowed" : false,
-            "name" : "dll"
-         },
-         {
-            "allowed" : false,
-            "name" : "der"
-         },
-         {
-            "allowed" : false,
-            "name" : "dat"
-         },
-         {
-            "allowed" : false,
-            "name" : "crt"
-         },
-         {
-            "allowed" : false,
-            "name" : "config"
-         },
-         {
-            "allowed" : false,
-            "name" : "conf"
-         },
-         {
-            "allowed" : false,
-            "name" : "com"
-         },
-         {
-            "allowed" : false,
-            "name" : "cmd"
-         },
-         {
-            "allowed" : false,
-            "name" : "cgi"
+            "allowed" : true,
+            "checkPostDataLength" : false,
+            "checkQueryStringLength" : true,
+            "checkRequestLength" : true,
+            "checkUrlLength" : true,
+            "name" : "rnd",
+            "performStaging" : false,
+            "queryStringLength" : 1000,
+            "requestLength" : 10000000,
+            "responseCheck" : false,
+            "type" : "explicit",
+            "urlLength" : 100
          },
          {
             "allowed" : true,
@@ -1784,27 +1602,232 @@
             "checkUrlLength" : true,
             "name" : "no_ext",
             "performStaging" : false,
-            "postDataLength" : 1000000,
+            "postDataLength" : 10000000,
             "queryStringLength" : 1000,
-            "requestLength" : 1000000,
+            "requestLength" : 10000000,
             "responseCheck" : false,
             "type" : "explicit",
             "urlLength" : 100
          },
          {
-            "allowed" : true,
-            "checkPostDataLength" : true,
-            "checkQueryStringLength" : true,
-            "checkRequestLength" : true,
-            "checkUrlLength" : true,
-            "name" : "rnd",
-            "performStaging" : false,
-            "postDataLength" : 100000,
-            "queryStringLength" : 1000,
-            "requestLength" : 100000,
-            "responseCheck" : false,
-            "type" : "explicit",
-            "urlLength" : 100
+            "allowed" : false,
+            "name" : "cgi"
+         },
+         {
+            "allowed" : false,
+            "name" : "cmd"
+         },
+         {
+            "allowed" : false,
+            "name" : "com"
+         },
+         {
+            "allowed" : false,
+            "name" : "conf"
+         },
+         {
+            "allowed" : false,
+            "name" : "config"
+         },
+         {
+            "allowed" : false,
+            "name" : "crt"
+         },
+         {
+            "allowed" : false,
+            "name" : "dat"
+         },
+         {
+            "allowed" : false,
+            "name" : "der"
+         },
+         {
+            "allowed" : false,
+            "name" : "dll"
+         },
+         {
+            "allowed" : false,
+            "name" : "do"
+         },
+         {
+            "allowed" : false,
+            "name" : "eml"
+         },
+         {
+            "allowed" : false,
+            "name" : "exe"
+         },
+         {
+            "allowed" : false,
+            "name" : "hta"
+         },
+         {
+            "allowed" : false,
+            "name" : "htr"
+         },
+         {
+            "allowed" : false,
+            "name" : "htw"
+         },
+         {
+            "allowed" : false,
+            "name" : "ida"
+         },
+         {
+            "allowed" : false,
+            "name" : "idc"
+         },
+         {
+            "allowed" : false,
+            "name" : "idq"
+         },
+         {
+            "allowed" : false,
+            "name" : "ini"
+         },
+         {
+            "allowed" : false,
+            "name" : "java"
+         },
+         {
+            "allowed" : false,
+            "name" : "jsp"
+         },
+         {
+            "allowed" : false,
+            "name" : "key"
+         },
+         {
+            "allowed" : false,
+            "name" : "log"
+         },
+         {
+            "allowed" : false,
+            "name" : "lua"
+         },
+         {
+            "allowed" : false,
+            "name" : "msi"
+         },
+         {
+            "allowed" : false,
+            "name" : "nws"
+         },
+         {
+            "allowed" : false,
+            "name" : "old"
+         },
+         {
+            "allowed" : false,
+            "name" : "p12"
+         },
+         {
+            "allowed" : false,
+            "name" : "p7b"
+         },
+         {
+            "allowed" : false,
+            "name" : "p7c"
+         },
+         {
+            "allowed" : false,
+            "name" : "pem"
+         },
+         {
+            "allowed" : false,
+            "name" : "pfx"
+         },
+         {
+            "allowed" : false,
+            "name" : "php"
+         },
+         {
+            "allowed" : false,
+            "name" : "pol"
+         },
+         {
+            "allowed" : false,
+            "name" : "printer"
+         },
+         {
+            "allowed" : false,
+            "name" : "py"
+         },
+         {
+            "allowed" : false,
+            "name" : "reg"
+         },
+         {
+            "allowed" : false,
+            "name" : "sav"
+         },
+         {
+            "allowed" : false,
+            "name" : "save"
+         },
+         {
+            "allowed" : false,
+            "name" : "shtm"
+         },
+         {
+            "allowed" : false,
+            "name" : "shtml"
+         },
+         {
+            "allowed" : false,
+            "name" : "stm"
+         },
+         {
+            "allowed" : false,
+            "name" : "sys"
+         },
+         {
+            "allowed" : false,
+            "name" : "temp"
+         },
+         {
+            "allowed" : false,
+            "name" : "tmp"
+         },
+         {
+            "allowed" : false,
+            "name" : "wmz"
+         },
+         {
+            "allowed" : false,
+            "name" : "ashx"
+         },
+         {
+            "allowed" : false,
+            "name" : "aspx"
+         },
+         {
+            "allowed" : false,
+            "name" : "bak"
+         },
+         {
+            "allowed" : false,
+            "name" : "bat"
+         },
+         {
+            "allowed" : false,
+            "name" : "bck"
+         },
+         {
+            "allowed" : false,
+            "name" : "bin"
+         },
+         {
+            "allowed" : false,
+            "name" : "bkp"
+         },
+         {
+            "allowed" : false,
+            "name" : "cer"
+         },
+         {
+            "allowed" : false,
+            "name" : "cfg"
          },
          {
             "allowed" : true,
@@ -1814,16 +1837,16 @@
             "checkUrlLength" : true,
             "name" : "*",
             "performStaging" : false,
-            "postDataLength" : 1000,
+            "postDataLength" : 10000000,
             "queryStringLength" : 1000,
-            "requestLength" : 5000,
+            "requestLength" : 10000000,
             "responseCheck" : false,
             "type" : "wildcard",
             "urlLength" : 100,
             "wildcardOrder" : 1
          }
       ],
-      "fullPath" : "/MinIO/minioS3-2",
+      "fullPath" : "/minio/minio_api/minio_api_ASM_Policy",
       "general" : {
          "allowedResponseCodes" : [
             400,
@@ -1981,8 +2004,8 @@
          {
             "allowRepeatedOccurrences" : false,
             "autoDetectBinaryValue" : false,
-            "base64Decoding" : false,
             "checkSignatures" : true,
+            "decodeValueAsBase64" : "disabled",
             "htmlNormalization" : false,
             "mandatory" : false,
             "maskValueInLogs" : false,
@@ -1993,18 +2016,18 @@
             "urlNormalization" : false
          },
          {
-            "allowRepeatedOccurrences" : true,
+            "allowRepeatedOccurrences" : false,
             "autoDetectBinaryValue" : false,
-            "base64Decoding" : false,
             "checkSignatures" : true,
+            "decodeValueAsBase64" : "disabled",
             "htmlNormalization" : true,
             "mandatory" : false,
-            "maskValueInLogs" : false,
-            "name" : "referer",
-            "normalizationViolations" : true,
-            "percentDecoding" : false,
+            "maskValueInLogs" : true,
+            "name" : "authorization",
+            "normalizationViolations" : false,
+            "percentDecoding" : true,
             "type" : "explicit",
-            "urlNormalization" : true
+            "urlNormalization" : false
          },
          {
             "allowRepeatedOccurrences" : false,
@@ -2016,24 +2039,10 @@
             "type" : "explicit"
          },
          {
-            "allowRepeatedOccurrences" : false,
-            "autoDetectBinaryValue" : false,
-            "base64Decoding" : false,
-            "checkSignatures" : true,
-            "htmlNormalization" : true,
-            "mandatory" : false,
-            "maskValueInLogs" : true,
-            "name" : "authorization",
-            "normalizationViolations" : false,
-            "percentDecoding" : true,
-            "type" : "explicit",
-            "urlNormalization" : false
-         },
-         {
             "allowRepeatedOccurrences" : true,
             "autoDetectBinaryValue" : false,
-            "base64Decoding" : false,
             "checkSignatures" : true,
+            "decodeValueAsBase64" : "disabled",
             "htmlNormalization" : true,
             "mandatory" : false,
             "maskValueInLogs" : false,
@@ -2043,6 +2052,20 @@
             "type" : "wildcard",
             "urlNormalization" : false,
             "wildcardOrder" : 1
+         },
+         {
+            "allowRepeatedOccurrences" : true,
+            "autoDetectBinaryValue" : false,
+            "checkSignatures" : true,
+            "decodeValueAsBase64" : "disabled",
+            "htmlNormalization" : true,
+            "mandatory" : false,
+            "maskValueInLogs" : false,
+            "name" : "referer",
+            "normalizationViolations" : true,
+            "percentDecoding" : false,
+            "type" : "explicit",
+            "urlNormalization" : true
          }
       ],
       "ip-intelligence" : {
@@ -2070,7 +2093,7 @@
       "methods" : [
          {
             "actAsMethod" : "GET",
-            "name" : "DELETE"
+            "name" : "HEAD"
          },
          {
             "actAsMethod" : "GET",
@@ -2078,7 +2101,7 @@
          },
          {
             "actAsMethod" : "GET",
-            "name" : "HEAD"
+            "name" : "DELETE"
          },
          {
             "actAsMethod" : "POST",
@@ -2089,7 +2112,7 @@
             "name" : "GET"
          }
       ],
-      "name" : "minioS3-2",
+      "name" : "minio_api_ASM_Policy",
       "parameters" : [
          {
             "allowEmptyValue" : false,
@@ -2098,8 +2121,8 @@
             "checkMaxValueLength" : true,
             "checkMinValueLength" : true,
             "dataType" : "alpha-numeric",
+            "decodeValueAsBase64" : "enabled",
             "enableRegularExpression" : false,
-            "isBase64" : false,
             "isCookie" : false,
             "isHeader" : false,
             "level" : "global",
@@ -2107,126 +2130,15 @@
             "maximumLength" : 50,
             "metacharsOnParameterValueCheck" : true,
             "minimumLength" : 0,
-            "name" : "version-id-marker",
+            "name" : "versionId",
             "parameterLocation" : "any",
-            "performStaging" : true,
+            "performStaging" : false,
             "sensitiveParameter" : false,
             "type" : "explicit",
             "valueType" : "user-input"
-         },
-         {
-            "allowEmptyValue" : false,
-            "allowRepeatedParameterName" : false,
-            "attackSignaturesCheck" : true,
-            "checkMaxValueLength" : true,
-            "checkMinValueLength" : true,
-            "dataType" : "alpha-numeric",
-            "enableRegularExpression" : false,
-            "isBase64" : false,
-            "isCookie" : false,
-            "isHeader" : false,
-            "level" : "global",
-            "mandatory" : false,
-            "maximumLength" : 100,
-            "metacharsOnParameterValueCheck" : true,
-            "minimumLength" : 0,
-            "name" : "key-marker",
-            "parameterLocation" : "any",
-            "performStaging" : true,
-            "sensitiveParameter" : false,
-            "type" : "explicit",
-            "valueType" : "user-input"
-         },
-         {
-            "allowEmptyValue" : false,
-            "allowRepeatedParameterName" : false,
-            "isCookie" : false,
-            "isHeader" : false,
-            "level" : "global",
-            "mandatory" : false,
-            "name" : "versioning",
-            "parameterLocation" : "any",
-            "performStaging" : true,
-            "sensitiveParameter" : false,
-            "type" : "explicit",
-            "valueType" : "ignore"
-         },
-         {
-            "allowEmptyValue" : false,
-            "allowRepeatedParameterName" : false,
-            "isCookie" : false,
-            "isHeader" : false,
-            "level" : "global",
-            "mandatory" : false,
-            "name" : "delete",
-            "parameterLocation" : "any",
-            "performStaging" : true,
-            "sensitiveParameter" : false,
-            "type" : "explicit",
-            "valueType" : "ignore"
-         },
-         {
-            "allowEmptyValue" : false,
-            "allowRepeatedParameterName" : false,
-            "isCookie" : false,
-            "isHeader" : false,
-            "level" : "global",
-            "mandatory" : false,
-            "name" : "versions",
-            "parameterLocation" : "any",
-            "performStaging" : true,
-            "sensitiveParameter" : false,
-            "type" : "explicit",
-            "valueType" : "ignore"
          },
          {
             "allowEmptyValue" : true,
-            "allowRepeatedParameterName" : false,
-            "attackSignaturesCheck" : true,
-            "checkMaxValueLength" : true,
-            "checkMinValueLength" : true,
-            "dataType" : "alpha-numeric",
-            "enableRegularExpression" : false,
-            "isBase64" : false,
-            "isCookie" : false,
-            "isHeader" : false,
-            "level" : "global",
-            "mandatory" : false,
-            "maximumLength" : 10,
-            "metacharsOnParameterValueCheck" : true,
-            "minimumLength" : 0,
-            "name" : "prefix",
-            "parameterLocation" : "any",
-            "performStaging" : false,
-            "sensitiveParameter" : false,
-            "type" : "explicit",
-            "valueType" : "user-input"
-         },
-         {
-            "allowEmptyValue" : false,
-            "allowRepeatedParameterName" : false,
-            "attackSignaturesCheck" : true,
-            "checkMaxValueLength" : true,
-            "checkMinValueLength" : true,
-            "dataType" : "alpha-numeric",
-            "enableRegularExpression" : false,
-            "isBase64" : false,
-            "isCookie" : false,
-            "isHeader" : false,
-            "level" : "global",
-            "mandatory" : false,
-            "maximumLength" : 10,
-            "metacharsOnParameterValueCheck" : true,
-            "minimumLength" : 0,
-            "name" : "encoding-type",
-            "parameterLocation" : "any",
-            "performStaging" : false,
-            "sensitiveParameter" : false,
-            "type" : "explicit",
-            "valueType" : "user-input"
-         },
-         {
-            "allowEmptyValue" : false,
             "allowRepeatedParameterName" : false,
             "isCookie" : false,
             "isHeader" : false,
@@ -2246,16 +2158,16 @@
             "checkMaxValueLength" : true,
             "checkMinValueLength" : true,
             "dataType" : "alpha-numeric",
+            "decodeValueAsBase64" : "enabled",
             "enableRegularExpression" : false,
-            "isBase64" : false,
             "isCookie" : false,
             "isHeader" : false,
             "level" : "global",
             "mandatory" : false,
-            "maximumLength" : 50,
+            "maximumLength" : 10,
             "metacharsOnParameterValueCheck" : true,
             "minimumLength" : 0,
-            "name" : "versionId",
+            "name" : "encoding-type",
             "parameterLocation" : "any",
             "performStaging" : false,
             "sensitiveParameter" : false,
@@ -2267,12 +2179,123 @@
             "allowRepeatedParameterName" : false,
             "attackSignaturesCheck" : true,
             "checkMaxValueLength" : true,
-            "checkMetachars" : true,
-            "isBase64" : false,
+            "checkMinValueLength" : true,
+            "dataType" : "alpha-numeric",
+            "decodeValueAsBase64" : "enabled",
+            "enableRegularExpression" : false,
             "isCookie" : false,
             "isHeader" : false,
             "level" : "global",
+            "mandatory" : false,
             "maximumLength" : 10,
+            "metacharsOnParameterValueCheck" : true,
+            "minimumLength" : 0,
+            "name" : "prefix",
+            "parameterLocation" : "any",
+            "performStaging" : false,
+            "sensitiveParameter" : false,
+            "type" : "explicit",
+            "valueType" : "user-input"
+         },
+         {
+            "allowEmptyValue" : false,
+            "allowRepeatedParameterName" : false,
+            "isCookie" : false,
+            "isHeader" : false,
+            "level" : "global",
+            "mandatory" : false,
+            "name" : "versions",
+            "parameterLocation" : "any",
+            "performStaging" : true,
+            "sensitiveParameter" : false,
+            "type" : "explicit",
+            "valueType" : "ignore"
+         },
+         {
+            "allowEmptyValue" : true,
+            "allowRepeatedParameterName" : false,
+            "isCookie" : false,
+            "isHeader" : false,
+            "level" : "global",
+            "mandatory" : false,
+            "name" : "delete",
+            "parameterLocation" : "any",
+            "performStaging" : true,
+            "sensitiveParameter" : false,
+            "type" : "explicit",
+            "valueType" : "ignore"
+         },
+         {
+            "allowEmptyValue" : true,
+            "allowRepeatedParameterName" : false,
+            "isCookie" : false,
+            "isHeader" : false,
+            "level" : "global",
+            "mandatory" : false,
+            "name" : "versioning",
+            "parameterLocation" : "any",
+            "performStaging" : true,
+            "sensitiveParameter" : false,
+            "type" : "explicit",
+            "valueType" : "ignore"
+         },
+         {
+            "allowEmptyValue" : false,
+            "allowRepeatedParameterName" : false,
+            "attackSignaturesCheck" : true,
+            "checkMaxValueLength" : true,
+            "checkMinValueLength" : true,
+            "dataType" : "alpha-numeric",
+            "decodeValueAsBase64" : "enabled",
+            "enableRegularExpression" : false,
+            "isCookie" : false,
+            "isHeader" : false,
+            "level" : "global",
+            "mandatory" : false,
+            "maximumLength" : 100,
+            "metacharsOnParameterValueCheck" : true,
+            "minimumLength" : 0,
+            "name" : "key-marker",
+            "parameterLocation" : "any",
+            "performStaging" : true,
+            "sensitiveParameter" : false,
+            "type" : "explicit",
+            "valueType" : "user-input"
+         },
+         {
+            "allowEmptyValue" : false,
+            "allowRepeatedParameterName" : false,
+            "attackSignaturesCheck" : true,
+            "checkMaxValueLength" : true,
+            "checkMinValueLength" : true,
+            "dataType" : "alpha-numeric",
+            "decodeValueAsBase64" : "enabled",
+            "enableRegularExpression" : false,
+            "isCookie" : false,
+            "isHeader" : false,
+            "level" : "global",
+            "mandatory" : false,
+            "maximumLength" : 50,
+            "metacharsOnParameterValueCheck" : true,
+            "minimumLength" : 0,
+            "name" : "version-id-marker",
+            "parameterLocation" : "any",
+            "performStaging" : true,
+            "sensitiveParameter" : false,
+            "type" : "explicit",
+            "valueType" : "user-input"
+         },
+         {
+            "allowEmptyValue" : true,
+            "allowRepeatedParameterName" : false,
+            "attackSignaturesCheck" : true,
+            "checkMaxValueLength" : true,
+            "checkMetachars" : true,
+            "decodeValueAsBase64" : "enabled",
+            "isCookie" : false,
+            "isHeader" : false,
+            "level" : "global",
+            "maximumLength" : 500,
             "metacharsOnParameterValueCheck" : true,
             "name" : "*",
             "parameterLocation" : "any",
@@ -2297,22 +2320,18 @@
          }
       ],
       "policy-builder" : {
-         "autoApply" : {
-            "frequency" : "real-time"
-         },
          "enableFullPolicyInspection" : true,
          "enableTrustedTrafficSiteChangeTracking" : true,
          "enableUntrustedTrafficSiteChangeTracking" : true,
-         "fullyAutomatic" : true,
          "inactiveEntityInactivityDurationInDays" : 90,
          "learnFromResponses" : true,
          "learnInactiveEntities" : true,
          "learnOnlyFromNonBotTraffic" : false,
-         "learningMode" : "automatic",
+         "learningMode" : "manual",
          "responseStatusCodes" : [
-            "1xx",
+            "3xx",
             "2xx",
-            "3xx"
+            "1xx"
          ],
          "trafficTighten" : {
             "maxModificationSuggestionScore" : 40,
@@ -2394,16 +2413,16 @@
          "maximumUrls" : 100,
          "maximumWebsocketUrls" : 100,
          "wildcardUrlFiletypes" : [
-            "bmp",
-            "gif",
             "ico",
-            "jpeg",
-            "jpg",
-            "pcx",
-            "pdf",
-            "png",
             "swf",
-            "wav"
+            "jpeg",
+            "wav",
+            "bmp",
+            "png",
+            "pdf",
+            "gif",
+            "pcx",
+            "jpg"
          ]
       },
       "protocolIndependent" : false,
@@ -2412,17 +2431,8 @@
       },
       "response-pages" : [
          {
-            "responseActionType" : "default",
-            "responsePageType" : "graphql"
-         },
-         {
-            "ajaxActionType" : "alert-popup",
-            "ajaxPopupMessage" : "These username and password were found in the Leaked Credentials Data Base. They maybe used by attackers to compromise your account. Please change password.",
-            "responsePageType" : "leaked-credentials-ajax"
-         },
-         {
-            "responseActionType" : "default",
-            "responsePageType" : "leaked-credentials"
+            "responseActionType" : "erase-cookies",
+            "responsePageType" : "hijack"
          },
          {
             "ajaxActionType" : "alert-popup",
@@ -2431,7 +2441,16 @@
          },
          {
             "responseActionType" : "default",
-            "responsePageType" : "failed-login-honeypot"
+            "responsePageType" : "graphql"
+         },
+         {
+            "responseActionType" : "default",
+            "responsePageType" : "default"
+         },
+         {
+            "ajaxActionType" : "alert-popup",
+            "ajaxPopupMessage" : "The requested URL was rejected. Please consult with your administrator. Your support ID is: <%TS.request.ID()%>",
+            "responsePageType" : "ajax-login"
          },
          {
             "responseActionType" : "default",
@@ -2439,24 +2458,24 @@
          },
          {
             "responseActionType" : "default",
-            "responsePageType" : "captcha"
-         },
-         {
-            "responseActionType" : "default",
-            "responsePageType" : "mobile"
-         },
-         {
-            "responseActionType" : "default",
             "responsePageType" : "persistent-flow"
          },
          {
-            "responseActionType" : "erase-cookies",
-            "responsePageType" : "hijack"
+            "ajaxActionType" : "alert-popup",
+            "ajaxPopupMessage" : "These username and password were found in the Leaked Credentials Data Base. They maybe used by attackers to compromise your account. Please change password.",
+            "responsePageType" : "leaked-credentials-ajax"
          },
          {
-            "ajaxActionType" : "alert-popup",
-            "ajaxPopupMessage" : "The requested URL was rejected. Please consult with your administrator. Your support ID is: <%TS.request.ID()%>",
-            "responsePageType" : "ajax-login"
+            "responseActionType" : "soap-fault",
+            "responsePageType" : "xml"
+         },
+         {
+            "responseActionType" : "default",
+            "responsePageType" : "failed-login-honeypot"
+         },
+         {
+            "responseActionType" : "default",
+            "responsePageType" : "captcha"
          },
          {
             "ajaxActionType" : "alert-popup",
@@ -2465,12 +2484,12 @@
             "responsePageType" : "ajax"
          },
          {
-            "responseActionType" : "soap-fault",
-            "responsePageType" : "xml"
+            "responseActionType" : "default",
+            "responsePageType" : "leaked-credentials"
          },
          {
             "responseActionType" : "default",
-            "responsePageType" : "default"
+            "responsePageType" : "mobile"
          }
       ],
       "sensitive-parameters" : [
@@ -2967,11 +2986,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200102109"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001322"
          },
          {
@@ -3177,11 +3191,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101883"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200010137"
          },
          {
@@ -3253,11 +3262,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200015022"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200104995"
          },
          {
             "enabled" : true,
@@ -3413,11 +3417,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101256"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200009324"
          },
          {
             "enabled" : true,
@@ -3872,11 +3871,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101859"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101797"
          },
          {
@@ -3888,11 +3882,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200009117"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018182"
          },
          {
             "enabled" : true,
@@ -3953,11 +3942,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101191"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101862"
          },
          {
             "enabled" : true,
@@ -4048,11 +4032,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200102057"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101856"
          },
          {
             "enabled" : true,
@@ -4222,11 +4201,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018175"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101393"
          },
          {
@@ -4252,16 +4226,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200104983"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018173"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101339"
          },
          {
@@ -4272,22 +4236,12 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018168"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101836"
          },
          {
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001273"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101877"
          },
          {
             "enabled" : true,
@@ -4308,11 +4262,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200002027"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101863"
          },
          {
             "enabled" : true,
@@ -4433,11 +4382,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001861"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200104996"
          },
          {
             "enabled" : true,
@@ -4612,11 +4556,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018160"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200015082"
          },
          {
@@ -4767,11 +4706,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101853"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101142"
          },
          {
@@ -4872,11 +4806,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018157"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101801"
          },
          {
@@ -4937,17 +4866,7 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018178"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001533"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018151"
          },
          {
             "enabled" : true,
@@ -5047,11 +4966,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101868"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200002671"
          },
          {
@@ -5128,11 +5042,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001488"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101849"
          },
          {
             "enabled" : true,
@@ -5302,11 +5211,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200019147"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001932"
          },
          {
@@ -5353,11 +5257,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001147"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200104865"
          },
          {
             "enabled" : true,
@@ -5518,11 +5417,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200002398"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200102111"
          },
          {
             "enabled" : true,
@@ -5718,11 +5612,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101691"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018165"
          },
          {
             "enabled" : true,
@@ -6397,11 +6286,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200015146"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200015087"
          },
          {
@@ -6582,11 +6466,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101858"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200002267"
          },
          {
@@ -6717,16 +6596,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101865"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200022047"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001892"
          },
          {
@@ -6808,11 +6677,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001779"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101867"
          },
          {
             "enabled" : true,
@@ -6903,11 +6767,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200020140"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018171"
          },
          {
             "enabled" : true,
@@ -7077,11 +6936,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018169"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200009006"
          },
          {
@@ -7238,11 +7092,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001800"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101850"
          },
          {
             "enabled" : true,
@@ -7527,11 +7376,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018156"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101165"
          },
          {
@@ -7622,11 +7466,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018179"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200000101"
          },
          {
@@ -7673,11 +7512,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200009119"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018185"
          },
          {
             "enabled" : true,
@@ -7787,11 +7621,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101876"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200015066"
          },
          {
@@ -7853,11 +7682,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101667"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200014023"
          },
          {
             "enabled" : true,
@@ -7987,11 +7811,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101838"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200015014"
          },
          {
@@ -8028,11 +7847,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101319"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200104982"
          },
          {
             "enabled" : true,
@@ -8112,11 +7926,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018170"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200009017"
          },
          {
@@ -8173,11 +7982,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001480"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200005016"
          },
          {
             "enabled" : true,
@@ -8353,11 +8157,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200004230"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101840"
          },
          {
             "enabled" : true,
@@ -8552,11 +8351,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101844"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101169"
          },
          {
@@ -8737,11 +8531,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200102110"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101449"
          },
          {
@@ -8792,11 +8581,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200013066"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001729"
          },
          {
@@ -8807,22 +8591,12 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101855"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200020109"
          },
          {
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001625"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101882"
          },
          {
             "enabled" : true,
@@ -8863,11 +8637,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001225"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018161"
          },
          {
             "enabled" : true,
@@ -9008,11 +8777,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101380"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101845"
          },
          {
             "enabled" : true,
@@ -9202,11 +8966,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101874"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200020062"
          },
          {
@@ -9233,11 +8992,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001746"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101861"
          },
          {
             "enabled" : true,
@@ -9343,11 +9097,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001954"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101881"
          },
          {
             "enabled" : true,
@@ -9547,11 +9296,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101864"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001496"
          },
          {
@@ -9592,17 +9336,12 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200014024"
+            "signatureId" : "200002553"
          },
          {
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101324"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200002553"
          },
          {
             "enabled" : true,
@@ -9648,11 +9387,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001577"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101866"
          },
          {
             "enabled" : true,
@@ -9852,11 +9586,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101846"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200002395"
          },
          {
@@ -9892,22 +9621,12 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101879"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001508"
          },
          {
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101790"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101318"
          },
          {
             "enabled" : true,
@@ -9923,6 +9642,11 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200004241"
+         },
+         {
+            "enabled" : true,
+            "performStaging" : false,
+            "signatureId" : "200101318"
          },
          {
             "enabled" : true,
@@ -9963,11 +9687,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200005011"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200015143"
          },
          {
             "enabled" : true,
@@ -10063,11 +9782,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001771"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018162"
          },
          {
             "enabled" : true,
@@ -10327,11 +10041,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101885"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101701"
          },
          {
@@ -10447,11 +10156,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200010473"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101293"
          },
          {
@@ -10492,12 +10196,12 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101332"
+            "signatureId" : "200020012"
          },
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200020012"
+            "signatureId" : "200101332"
          },
          {
             "enabled" : true,
@@ -10727,11 +10431,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018159"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001347"
          },
          {
@@ -10768,11 +10467,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001609"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200104867"
          },
          {
             "enabled" : true,
@@ -10887,11 +10581,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101887"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001970"
          },
          {
@@ -10928,11 +10617,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200020098"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101851"
          },
          {
             "enabled" : true,
@@ -11217,11 +10901,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101841"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001433"
          },
          {
@@ -11282,22 +10961,12 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200104979"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101558"
          },
          {
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200002103"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101842"
          },
          {
             "enabled" : true,
@@ -11313,11 +10982,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001194"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018155"
          },
          {
             "enabled" : true,
@@ -11348,11 +11012,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200020128"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101854"
          },
          {
             "enabled" : true,
@@ -11482,11 +11141,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018184"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001511"
          },
          {
@@ -11522,11 +11176,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200104907"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101620"
          },
          {
@@ -11548,11 +11197,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101677"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200015147"
          },
          {
             "enabled" : true,
@@ -11767,11 +11411,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018177"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200002492"
          },
          {
@@ -11947,11 +11586,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101322"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001596"
          },
          {
@@ -11972,12 +11606,12 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200001399"
+            "signatureId" : "200101322"
          },
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101875"
+            "signatureId" : "200001399"
          },
          {
             "enabled" : true,
@@ -12107,11 +11741,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018186"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101533"
          },
          {
@@ -12133,16 +11762,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200002916"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200013065"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200023006"
          },
          {
             "enabled" : true,
@@ -12173,11 +11792,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001207"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200103336"
          },
          {
             "enabled" : true,
@@ -12277,11 +11891,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101869"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001051"
          },
          {
@@ -12317,12 +11926,12 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101335"
+            "signatureId" : "200001726"
          },
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200001726"
+            "signatureId" : "200101335"
          },
          {
             "enabled" : true,
@@ -12402,17 +12011,17 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101302"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200009195"
          },
          {
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101117"
+         },
+         {
+            "enabled" : true,
+            "performStaging" : false,
+            "signatureId" : "200101302"
          },
          {
             "enabled" : true,
@@ -12647,11 +12256,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101860"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001321"
          },
          {
@@ -12772,11 +12376,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101884"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101709"
          },
          {
@@ -12833,11 +12432,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200002590"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101870"
          },
          {
             "enabled" : true,
@@ -12962,17 +12556,7 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018152"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101625"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101880"
          },
          {
             "enabled" : true,
@@ -12983,11 +12567,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001154"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018163"
          },
          {
             "enabled" : true,
@@ -13257,11 +12836,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101839"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200002229"
          },
          {
@@ -13332,12 +12906,12 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101317"
+            "signatureId" : "200001993"
          },
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200001993"
+            "signatureId" : "200101317"
          },
          {
             "enabled" : true,
@@ -13377,11 +12951,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101847"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001875"
          },
          {
@@ -13417,11 +12986,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200014025"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101725"
          },
          {
@@ -13433,11 +12997,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200002870"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101878"
          },
          {
             "enabled" : true,
@@ -13463,11 +13022,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101113"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200015144"
          },
          {
             "enabled" : true,
@@ -13917,11 +13471,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101857"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200018044"
          },
          {
@@ -14047,11 +13596,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101843"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001817"
          },
          {
@@ -14137,16 +13681,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200104866"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018158"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101562"
          },
          {
@@ -14173,11 +13707,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200019047"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200103330"
          },
          {
             "enabled" : true,
@@ -14262,11 +13791,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200013055"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200002932"
          },
          {
@@ -14283,11 +13807,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200015097"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101340"
          },
          {
             "enabled" : true,
@@ -14312,6 +13831,11 @@
          {
             "enabled" : true,
             "performStaging" : false,
+            "signatureId" : "200101340"
+         },
+         {
+            "enabled" : true,
+            "performStaging" : false,
             "signatureId" : "200009036"
          },
          {
@@ -14332,22 +13856,17 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101886"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200101235"
          },
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101312"
+            "signatureId" : "200002290"
          },
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200002290"
+            "signatureId" : "200101312"
          },
          {
             "enabled" : true,
@@ -14373,11 +13892,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200004239"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101848"
          },
          {
             "enabled" : true,
@@ -14587,12 +14101,12 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200101306"
+            "signatureId" : "200020015"
          },
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200020015"
+            "signatureId" : "200101306"
          },
          {
             "enabled" : true,
@@ -14678,11 +14192,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200001336"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101852"
          },
          {
             "enabled" : true,
@@ -14792,11 +14301,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018167"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200019003"
          },
          {
@@ -14857,17 +14361,7 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200018174"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200001933"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018164"
          },
          {
             "enabled" : true,
@@ -14913,11 +14407,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200002378"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200018172"
          },
          {
             "enabled" : true,
@@ -15028,11 +14517,6 @@
             "enabled" : true,
             "performStaging" : false,
             "signatureId" : "200101746"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
-            "signatureId" : "200101873"
          },
          {
             "enabled" : true,
@@ -15202,11 +14686,6 @@
          {
             "enabled" : true,
             "performStaging" : false,
-            "signatureId" : "200015148"
-         },
-         {
-            "enabled" : true,
-            "performStaging" : false,
             "signatureId" : "200009145"
          },
          {
@@ -15285,87 +14764,107 @@
             "signatureId" : "200001832"
          }
       ],
-      "softwareVersion" : "17.1.2",
+      "softwareVersion" : "17.5.0",
       "ssrf-hosts" : [
          {
             "action" : "disallow",
-            "host" : "*.burpcollaborator.net"
+            "host" : "*.burpcollaborator.net",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "metadata.google.internal"
+            "host" : "metadata.google.internal",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "localhost"
+            "host" : "localhost",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "rancher-metadata"
+            "host" : "rancher-metadata",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "192.0.2.0/24"
+            "host" : "192.0.2.0/24",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "198.51.100.0/24"
+            "host" : "198.51.100.0/24",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "203.0.113.0/24"
+            "host" : "203.0.113.0/24",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "169.254.0.0/16"
+            "host" : "169.254.0.0/16",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "192.168.0.0/16"
+            "host" : "192.168.0.0/16",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "172.16.0.0/12"
+            "host" : "172.16.0.0/12",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "fe80::/10"
+            "host" : "fe80::/10",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "10.0.0.0/8"
+            "host" : "10.0.0.0/8",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "127.0.0.0/8"
+            "host" : "127.0.0.0/8",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "0.0.0.0"
+            "host" : "0.0.0.0",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "100.100.100.200"
+            "host" : "100.100.100.200",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "168.63.129.16"
+            "host" : "168.63.129.16",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "192.0.0.192"
+            "host" : "192.0.0.192",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "::"
+            "host" : "::",
+            "wildcardOrder" : -2
          },
          {
             "action" : "disallow",
-            "host" : "::1"
+            "host" : "::1",
+            "wildcardOrder" : -2
          },
          {
             "action" : "resolve",
-            "host" : "*"
+            "host" : "*",
+            "wildcardOrder" : -2
          }
       ],
       "template" : {
@@ -15391,8 +14890,8 @@
             "method" : "*",
             "methodsOverrideOnUrlCheck" : false,
             "name" : "/warp-benchmark-bucket/*",
-            "performStaging" : true,
-            "protocol" : "http",
+            "performStaging" : false,
+            "protocol" : "https",
             "type" : "wildcard",
             "urlContentProfiles" : [
                {
@@ -15400,7 +14899,41 @@
                   "headerName" : "*",
                   "headerOrder" : "default",
                   "headerValue" : "*",
-                  "type" : "apply-value-and-content-signatures"
+                  "type" : "do-nothing"
+               },
+               {
+                  "decodeValueAsBase64" : "disabled",
+                  "headerName" : "Content-Type",
+                  "headerOrder" : "2",
+                  "headerValue" : "*form*",
+                  "type" : "form-data"
+               },
+               {
+                  "contentProfile" : {
+                     "name" : "Default"
+                  },
+                  "decodeValueAsBase64" : "disabled",
+                  "headerName" : "Content-Type",
+                  "headerOrder" : "3",
+                  "headerValue" : "*json*",
+                  "type" : "json"
+               },
+               {
+                  "decodeValueAsBase64" : "disabled",
+                  "headerName" : "Content-Type",
+                  "headerOrder" : "1",
+                  "headerValue" : "*octet-stream*",
+                  "type" : "do-nothing"
+               },
+               {
+                  "contentProfile" : {
+                     "name" : "Default"
+                  },
+                  "decodeValueAsBase64" : "disabled",
+                  "headerName" : "Content-Type",
+                  "headerOrder" : "4",
+                  "headerValue" : "*xml*",
+                  "type" : "xml"
                }
             ],
             "wildcardIncludesSlash" : true,
@@ -15419,8 +14952,8 @@
             "metacharsOnUrlCheck" : true,
             "method" : "*",
             "methodsOverrideOnUrlCheck" : false,
-            "name" : "*",
-            "performStaging" : true,
+            "name" : "/warp-benchmark-bucket/*",
+            "performStaging" : false,
             "protocol" : "http",
             "type" : "wildcard",
             "urlContentProfiles" : [
@@ -15432,35 +14965,15 @@
                   "type" : "apply-value-and-content-signatures"
                },
                {
-                  "contentProfile" : {
-                     "name" : "Default"
-                  },
-                  "decodeValueAsBase64" : "disabled",
-                  "headerName" : "Content-Type",
-                  "headerOrder" : "2",
-                  "headerValue" : "*application/json*",
-                  "type" : "json"
-               },
-               {
                   "decodeValueAsBase64" : "disabled",
                   "headerName" : "Content-Type",
                   "headerOrder" : "1",
-                  "headerValue" : "*form*",
-                  "type" : "form-data"
-               },
-               {
-                  "contentProfile" : {
-                     "name" : "Default"
-                  },
-                  "decodeValueAsBase64" : "disabled",
-                  "headerName" : "Content-Type",
-                  "headerOrder" : "3",
-                  "headerValue" : "*xml*",
-                  "type" : "xml"
+                  "headerValue" : "*octet-stream*",
+                  "type" : "do-nothing"
                }
             ],
             "wildcardIncludesSlash" : true,
-            "wildcardOrder" : 3
+            "wildcardOrder" : 2
          },
          {
             "attackSignaturesCheck" : true,
@@ -15516,7 +15029,63 @@
                }
             ],
             "wildcardIncludesSlash" : true,
-            "wildcardOrder" : 2
+            "wildcardOrder" : 3
+         },
+         {
+            "attackSignaturesCheck" : true,
+            "clickjackingProtection" : false,
+            "description" : "",
+            "disallowFileUploadOfExecutables" : false,
+            "html5CrossOriginRequestsEnforcement" : {
+               "enforcementMode" : "enforce"
+            },
+            "isAllowed" : true,
+            "mandatoryBody" : false,
+            "metacharsOnUrlCheck" : true,
+            "method" : "*",
+            "methodsOverrideOnUrlCheck" : false,
+            "name" : "*",
+            "performStaging" : true,
+            "protocol" : "http",
+            "type" : "wildcard",
+            "urlContentProfiles" : [
+               {
+                  "decodeValueAsBase64" : "disabled",
+                  "headerName" : "*",
+                  "headerOrder" : "default",
+                  "headerValue" : "*",
+                  "type" : "apply-value-and-content-signatures"
+               },
+               {
+                  "contentProfile" : {
+                     "name" : "Default"
+                  },
+                  "decodeValueAsBase64" : "disabled",
+                  "headerName" : "Content-Type",
+                  "headerOrder" : "2",
+                  "headerValue" : "*application/json*",
+                  "type" : "json"
+               },
+               {
+                  "decodeValueAsBase64" : "disabled",
+                  "headerName" : "Content-Type",
+                  "headerOrder" : "1",
+                  "headerValue" : "*form*",
+                  "type" : "form-data"
+               },
+               {
+                  "contentProfile" : {
+                     "name" : "Default"
+                  },
+                  "decodeValueAsBase64" : "disabled",
+                  "headerName" : "Content-Type",
+                  "headerOrder" : "3",
+                  "headerValue" : "*xml*",
+                  "type" : "xml"
+               }
+            ],
+            "wildcardIncludesSlash" : true,
+            "wildcardOrder" : 4
          }
       ],
       "websocket-urls" : [
@@ -15581,7 +15150,6 @@
             "wildcardOrder" : 1
          }
       ],
-      "whitelist-ips" : [],
       "xml-profiles" : [
          {
             "attachmentsInSoapMessages" : false,
